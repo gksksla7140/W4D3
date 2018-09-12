@@ -1,0 +1,30 @@
+<% if type == :new  %>
+  <% button_msg= "Create Me!" %>
+  <% action_url = users_url %>
+<% elsif type == :snew %>
+  <% button_msg= "LOG ME IN!!" %>
+  <% action_url = session_url %>
+<% end  %>
+
+
+
+<form class="" action="<%= action_url %>" method="post">
+  <input 
+    type="hidden" 
+    name="authenticity_token" 
+    value="<%= form_authenticity_token %>">
+  
+  <label for="username">Username:
+    <input type="text" name="user[username]">
+  </label>
+  <br>
+  <br>
+  
+  <label for="password">Password:
+    <input type="password" name="user[password]">
+  </label>
+  <br>
+  <br>
+  <input type="submit" name="submit" value=" <%= button_msg %>">
+</form>
+

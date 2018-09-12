@@ -1,0 +1,11 @@
+<h1>Sign IN</h1>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+      <li> <%= error %> </li>
+    <% end  %>
+<% end  %>
+<br>
+<br>
+
+<%= render '/users/form', type: :snew %>
