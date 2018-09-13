@@ -32,9 +32,13 @@ class Cat < ApplicationRecord
     class_name: :CatRentalRequest,
     dependent: :destroy
     
-    belongs_to :owner,
+  belongs_to :owner,
     foreign_key: :user_id,
     class_name: :User
+    
+  def owner=(owner_id)
+    self.user_id = owner_id
+  end
 
   def age
     time_ago_in_words(birth_date)

@@ -29,5 +29,8 @@ class ApplicationController < ActionController::Base
     redirect_to user_url(@current_user) if logged_in?
   end
   
+  def check_owner?
+    
+  end
   
 end

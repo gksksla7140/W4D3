@@ -22,6 +22,12 @@
         <input type="submit" name="submit" value="Logout">
         
       </form>
+    <%else  %>
+      <a href="<%=new_user_url  %>"> Sign Up</a>
+      <br>
+      <a href=" <%= new_session_url %>"> Sign In</a>
+        
+      </form>
     <% end %>
   
     <%= yield %>
